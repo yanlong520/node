@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../js/jq.js"></script>
+    <link rel="stylesheet" href="../css/page.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="nav"> <h3>年哥专栏 - 和你说这些事儿</h3></nav>
+    
+    <div id="content"></div>
+    <script>
+        $.ajax({
+            type : 'get',
+            url : '/getPage',
+            data : {
+                _id : _id
+            },
+            success : function(e){
+                $('#content').html(e)
+            }
+        })
+        
+        
+        </script>
+    
+</body>
+</html>

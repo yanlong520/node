@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./js/jq.js"></script>
+    <link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap.css">
+
+    <script src="./bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <h3><a href="/">回到首页</a></h3>
+        <div class="page-header">
+            <h1>标题
+                <small>简介</small>
+            </h1>
+        </div>
+        <div>分类
+            <span class="labei labei-primary">js</span>
+        </div>
+        <p>
+            作者 ： 罗德志
+        </p>
+        <p>
+            日期 ： 2018-4546-412-4844
+        </p>
+        <div>内容</div>
+        <div class="page-header">
+            <h3>评论
+            </h3>
+        </div>
+        <ul class="list-group">
+            <% comment.foreach(function(e){  %>
+                <li class="list-group-item">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <strong>
+                                <%= e.content%>
+                            </strong>
+                        </div>
+                        <div class="panel-footer">
+                            <%= e.author %> -
+                                <%= e.date %>
+                        </div>
+                    </div>
+                </li>
+                <% })  %>
+
+        </ul>
+
+        <div class="page-header">
+            <h3>我也要发表评论</h3>
+        </div>
+        <form method="POST" action="/submitcomment>_id=<%=data._id%>">
+            <div class="form-group">
+                <label for="exampleInputEmail1">你的邮箱</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            </div>
+            <div class="form-group">
+               <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <button type="submit"  class="btn btn-default"></button>
+        </form>
+
+    </div>
+
+</body>
+
+</html>

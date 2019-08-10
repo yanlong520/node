@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    form ajax 
+    注意：form和ajax后端接收到的数据不一样；
+    form是querystring，ajax是json
+    解决办法是在ajax发起请求的时候设置请求头：setRequestHeader : 'text/json'
+    <form action="/pages" method="GET">
+        <!-- /pages 是域名下的接口，比如会拼凑成127.0.0.1:3000/pages -->
+        <input type="text" name='page'>
+        <!-- 这里的name=page是携带input输入的值的参数，比如在input输入123，那么会拼凑成127.0.0.1:3000/pages?page=123 -->
+
+        <input type="submit" value="获取输入的值">
+
+    </form>
+
+
+    <form action="/login" method="POST">
+    <input type="text" name="username">
+    <input type="text" name="password">
+    <input type="submit" value="提交登录">
+    </form>
+    <script src="./index.js"> </script>
+</body>
+
+</html>
